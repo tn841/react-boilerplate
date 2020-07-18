@@ -20,7 +20,7 @@ mongoose.connect('mongodb+srv://tn841:rlatnals1!@boilerplate.p4wnu.mongodb.net/b
 
 
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send('Hello World! nodemon!'))
 
 app.post('/register', (req, res) => {
   // 회원 가입 시 필요한 정보를 받아 DB에 넣는다.
