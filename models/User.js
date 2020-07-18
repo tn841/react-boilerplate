@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const userSchema = mongoose.Schema({
     name: {
@@ -26,6 +28,27 @@ const userSchema = mongoose.Schema({
         type: Number
     }
 });
+
+userSchema.pre('save', function(next) { // arrow function을 쓰면 안됨..
+    console.log('** save pre function.')
+    var user = this;
+    console.log(user);
+    console.log("check isModified : "+user.isModified())
+    if(user.isModified('password')){
+        bcrypt.genSalt(saltRounds, (err, salt) => {
+            if(err) {
+                console.log(err);
+                return next(err);
+            };
+    
+            bcrypt.hash(user.password, salt, (err, hash) => {
+                if(err) return next(err);
+                user.password = hash;
+                next();
+            });
+        });
+    }
+})
 
 const User = mongoose.model('User', userSchema);
 

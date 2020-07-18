@@ -26,8 +26,8 @@ app.get('/', (req, res) => res.send('Hello World! nodemon!'))
 
 app.post('/register', (req, res) => {
   // 회원 가입 시 필요한 정보를 받아 DB에 넣는다.
-  console.log(req)
   const user = new User(req.body)
+  
   user.save((err, userinfo) => {
     if(err) return res.json({success: false, err})
     return res.status(200).json({
