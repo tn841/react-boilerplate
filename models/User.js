@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+const jwt = require('jsonwebtoken');
 
 const userSchema = mongoose.Schema({
     name: {
@@ -14,7 +15,7 @@ const userSchema = mongoose.Schema({
     },
     password: {
         type: String,
-        maxlength: 50
+        maxlength: 100
     },
     role: {
         type: Number,
@@ -53,12 +54,28 @@ userSchema.pre('save', function(next) { // arrow function을 쓰면 안됨..
     }
 })
 
-userSchema.method.comparePassword = function(plain, callback){
+userSchema.methods.comparePassword = function(plain, callback){
     // 해쉬암호화된 비밀번호 비교
     bcrypt.compare(plain, this.password, function(err, isMatch){
-        if(err) return callback(err),
-            callback(null, isMatch)
+        if(err) return callback(err);
+        callback(null, isMatch);
     })
+};
+
+
+userSchema.methods.generateToken = function(cb){
+    var user = this;    //해당 라이브러리에서 ES5 문법만 지원?
+
+    // JWT를 이용하여 Token생성
+    var token = jwt.sign(user._id.toHexString(), 'sercetToken')
+    console.log('token : '+ token)
+    user.token = token
+    user.save(function(err, user){
+        if(err) return cb(err)
+        cb(null, user)
+    })
+
+    
 }
 
 
