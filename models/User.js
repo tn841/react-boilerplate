@@ -48,7 +48,19 @@ userSchema.pre('save', function(next) { // arrow function을 쓰면 안됨..
             });
         });
     }
+    else {
+        next()
+    }
 })
+
+userSchema.method.comparePassword = function(plain, callback){
+    // 해쉬암호화된 비밀번호 비교
+    bcrypt.compare(plain, this.password, function(err, isMatch){
+        if(err) return callback(err),
+            callback(null, isMatch)
+    })
+}
+
 
 const User = mongoose.model('User', userSchema);
 

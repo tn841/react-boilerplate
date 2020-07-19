@@ -1,3 +1,3 @@
 module.exports={
-    mongoURL : process.env.MONGOURI
+    mongoURI : process.env.MONGOURI
 }
