@@ -50,3 +50,8 @@ npx create-react-app .
 - HOC : flask 데코레이터 같은 느낌. ex) 권한체크..
 
 > vscode react Extension을 이용하여, rfce를 치면 react functional component 문법을 자동완성 해준다.
+
+
+- - -
+## #20. React Router Dom
+- react에서는 페이지 이동을 할 때, React Router Dom이라는 것을 이용한다.
