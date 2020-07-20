@@ -1,3 +1,9 @@
+## #13. Auth기능 만들기
+- token을 활용한 인증 기능 구현
+- cookie에 있는 token을 가져와서 User정보를 얻는다.
+- route함수에 middleware를 구현하여, 인증을 먼저 체크한다.
+
+- - -
 ## #15. Reat란?
 1. FaceBook에서 만든 JS Library
 2. 구현하고자하는 것을 컴포넌트화 하고 모듈화한다.

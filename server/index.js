@@ -3,6 +3,7 @@ const app = express()
 const port = 5000
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const {auth} = require('./middleware/auth');
 const {User} = require('./models/User');
 
 
@@ -31,7 +32,7 @@ app.get('/api/hello', (req, res) => {
   res.send("안녕하세요.")
 })
 
-app.post('/register', (req, res) => {
+app.post('/api/user/register', (req, res) => {
   // 회원 가입 시 필요한 정보를 받아 DB에 넣는다.
   const user = new User(req.body)
   
@@ -44,7 +45,7 @@ app.post('/register', (req, res) => {
 
 })
 
-app.post('/login', (req, res) => {
+app.post('/api/user/login', (req, res) => {
   console.log(req.body)
 
   // 요청된 이메일을 DB에서 찾는다.
@@ -81,5 +82,20 @@ app.post('/login', (req, res) => {
 
   
 })
+
+app.get('/api/user/auth', auth, (req, res) => {
+
+  res.status(200).json({
+    _id : req.user._id,
+    isAdmin: req.user.role === 0 ? false : true,
+    isAuth: true,
+    eamil : req.user.email,
+    name : req.user.name,
+    role: req.user.role,
+    image: req.user.image
+  })
+
+})
+//나중에 express에서 제공하는 Router를 이용하여 깔끔히 정리할 예정.
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
