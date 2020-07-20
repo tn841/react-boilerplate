@@ -61,3 +61,17 @@ npx create-react-app .
 ## #21. 데이터 Flow & Axios
 - Axios 라이브러리 install -> client에 설치한다.
 - CORS 이슈가 발생한다.
+
+- - -
+## #22. CORS이슈, Proxy 설정
+- server : port 5000
+- client : port 3000
+- Proxy를 사용하여 해결할 수 있다.
+```
+npm install http-proxy-middleware --save
+```
+
+
+- - -
+## #23. Proxy Server란?
+- server와 client 사이에서 IP제어, 캐시, 보안 강화, 접근 제어 등의 역할을 한다.
