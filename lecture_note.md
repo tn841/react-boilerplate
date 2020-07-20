@@ -13,4 +13,17 @@
 npx create-react-app .
 ```
 
+- - -
+## #17. npm mpx
+- npm (Node Package Manager)
+    - registry?
+    - 빌드할때 사용
+    - 디팬던시 관리
+    - 기본적으로 local에 다운로드, 설치가 된다.
+    - -g 옵션을 주면 global로 다운로드, 설치가 된다.
+- npx
+    - 원격에 있는 create-react-app을 다운받지 않고 사용할 수 있다.
 
+- - -
+## #18. react 프로젝트 구조 설명
+- 
