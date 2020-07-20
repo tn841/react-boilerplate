@@ -3,7 +3,7 @@ import axios from 'axios';
 function LangdingPage() {
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/hello')
+        axios.get('/api/hello')
         .then(response => console.log(response.data))
     }, [])
 
@@ -13,5 +13,7 @@ function LangdingPage() {
         </div>
     )
 }
+
+// 참고 : https://create-react-app.dev/docs/proxying-api-requests-in-development/
 
 export default LangdingPage
