@@ -4,6 +4,11 @@
 - route함수에 middleware를 구현하여, 인증을 먼저 체크한다.
 
 - - -
+## #14. Logout 기능 만들기
+- cookie에서 token을 얻고DB에서 해당 User를 찾는다.
+- 있다면, DB에서 token을 지운다.
+
+- - -
 ## #15. Reat란?
 1. FaceBook에서 만든 JS Library
 2. 구현하고자하는 것을 컴포넌트화 하고 모듈화한다.

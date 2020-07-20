@@ -96,6 +96,19 @@ app.get('/api/user/auth', auth, (req, res) => {
   })
 
 })
+
+app.get('/api/user/logout', auth, (req, res) => {
+  User.findOneAndUpdate(
+    {_id:req.user._id},
+    {token:""}, 
+    (err, user) => {
+      if(err) return res.json({success: false, err});
+      res.status(200).send({
+        success: true
+      })
+    })
+})
+
 //나중에 express에서 제공하는 Router를 이용하여 깔끔히 정리할 예정.
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
