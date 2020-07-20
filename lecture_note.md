@@ -13,6 +13,8 @@
 npx create-react-app .
 ```
 
+> 기존에 npm -g 옵션으로 설치된 create-react-app이 있다면, 삭제 후 npx로 재설치해준다.
+
 - - -
 ## #17. npm mpx
 - npm (Node Package Manager)
@@ -26,4 +28,25 @@ npx create-react-app .
 
 - - -
 ## #18. react 프로젝트 구조 설명
-- 
+- public
+    - index.html : 실제 페이지
+    - public 디렉토리 하위에 생성되는 파일은 webpack이 src디렉토리 파일을 bundel처리한 결과물
+- src
+    - App.js : App 컴포넌트 정의
+    - index.js : App 컴포넌트를 랜더링
+    - src 디렉토리 하위에서 작업하는 파일은 webpack이 관리해준다.
+
+- - -
+## #19. CRA to Our Boilerplate
+> 우리가 원하는 형태로 프로젝트 구조 변경
+
+- _actions, _reducer : Redux를 위한 폴더
+- components/views : Page구현
+- components/views/Sections : 해당 페이지에 대한 css나 component들을 넣는다.
+- App.js : Routing관련 처리
+- Config.js : 환경변수 지정
+- hoc, utils : Heigher Order Component, 공통적으로 쓰이는 것, 어디서든 쓸수 있게 해줌
+
+- HOC : flask 데코레이터 같은 느낌. ex) 권한체크..
+
+> vscode react Extension을 이용하여, rfce를 치면 react functional component 문법을 자동완성 해준다.
