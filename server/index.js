@@ -27,6 +27,10 @@ mongoose.connect(config.mongoURI, {
 
 app.get('/', (req, res) => res.send('Hello World! nodemon!'))
 
+app.get('/api/hello', (req, res) => {
+  res.send("안녕하세요.")
+})
+
 app.post('/register', (req, res) => {
   // 회원 가입 시 필요한 정보를 받아 DB에 넣는다.
   const user = new User(req.body)

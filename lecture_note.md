@@ -55,3 +55,9 @@ npx create-react-app .
 - - -
 ## #20. React Router Dom
 - react에서는 페이지 이동을 할 때, React Router Dom이라는 것을 이용한다.
+
+
+- - -
+## #21. 데이터 Flow & Axios
+- Axios 라이브러리 install -> client에 설치한다.
+- CORS 이슈가 발생한다.
