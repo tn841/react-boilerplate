@@ -114,3 +114,21 @@ npm install concurrently --save
 ```
 npm install antd --save
 ```
+
+- - -
+## #25. Redux 기초
+- 상태(state)관리 라이브러리
+- Props : 
+    - properties
+    - 컴포넌트 간 데이터 통신
+    - 부모에서 자식으로만 데이터를 보낼 수 있다.
+    - props값은 immutable하다.
+- State : 
+    - 컴포넌트 안에서 데이터 처리
+    - state는 mutable하다.
+    - state가 변하면 re-render 된다.
+
+- ACTION -> REDUCER -> STORE -> React Component -> ACTION (데이터는 한방향으로만 흐른다.)
+- ACTION : {type: 'LIKE_ARTICKE', articleID: 42}
+- REDUCER : (previousState, action) => nextState
+- STORE : app의 모든 state를 관리
