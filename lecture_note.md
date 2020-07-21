@@ -169,3 +169,8 @@ npm install antd --save
 
 
 - functional component에서도 class component의 lifecycle기능을 사용할 수 있게 개선된 것이 hook이다.
+
+- - -
+## #29. 30. 로그인 페이지 구현 
+- redux를 사용한 로그인 페이지 구현
+- 상당히 난해하다.
