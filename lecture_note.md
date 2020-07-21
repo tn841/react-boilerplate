@@ -132,3 +132,15 @@ npm install antd --save
 - ACTION : {type: 'LIKE_ARTICKE', articleID: 42}
 - REDUCER : (previousState, action) => nextState
 - STORE : app의 모든 state를 관리
+
+- - -
+## #26. Redux 실습
+- redux dependency 설치
+    - redux
+    - react-redux
+    - redux-promise
+    - redux-thunk
+        - redux를 잘 쓸수 있게 도와줌
+        - redux store는 object형식의 action만 받는다.
+        - 그러나, promise나 function형식의 action이 전달 될 때가 있다.
+        - 이럴 때, redux-promise / redux-thunk를 사용
