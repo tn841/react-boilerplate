@@ -93,3 +93,24 @@ npm install http-proxy-middleware --save
 ```
 npm install concurrently --save
 ```
+- package.json의 script 옵션을 추가한다.
+```
+"dev": "concurrently \"npm run devstart\" \"npm run start --prefix client\" "
+```
+
+- - -
+## #24. Antd CSS Framework
+- CSS Framework 종류 (for React)
+    1. Material UI
+    2. React Bootstrap
+    3. Semantic UI
+    4. Ant Design (강의에서 쓸 놈) 
+        - 장) 깔끔, 편리
+        - 단) 사이즈 큼, 중국에서 만듬
+        - https://ant.design/
+    5. Materialize
+    ...
+- react의 dependency이므로 client로 이동해서 npm install 한다.
+```
+npm install antd --save
+```
