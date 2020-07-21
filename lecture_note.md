@@ -89,3 +89,7 @@ npm install http-proxy-middleware --save
 
 - - -
 ## #24. Concurrently
+- client와 server를 각각 start해야하는 번거로움을 해결할 수 있다.
+```
+npm install concurrently --save
+```
