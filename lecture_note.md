@@ -144,3 +144,28 @@ npm install antd --save
         - redux store는 object형식의 action만 받는다.
         - 그러나, promise나 function형식의 action이 전달 될 때가 있다.
         - 이럴 때, redux-promise / redux-thunk를 사용
+
+- - -
+## #27. React Hooks
+- React Component
+    - class Component
+        - 더 많은 기능
+        - 코드가 김
+        - 다소 복잡
+        - 성능이 느려짐
+    - function Component        
+        - 기능이 적은
+        - 코드가 짧음
+        - 간단
+        - 성능이 좋음
+
+- 어떤 성능 차이?
+    - class Component는 생성/Rendering...등등의 lifecycle에서 기능을 구현 할 수 있다.
+        - constructor
+        - render
+        - componentDidMount
+        - componentDidUpdate
+        - componentWillUnmount
+
+
+- functional component에서도 class component의 lifecycle기능을 사용할 수 있게 개선된 것이 hook이다.
