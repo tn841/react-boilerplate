@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react'
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
+
 function LangdingPage(props) {
 
     useEffect(() => {
@@ -34,4 +36,4 @@ function LangdingPage(props) {
 
 // 참고 : https://create-react-app.dev/docs/proxying-api-requests-in-development/
 
-export default LangdingPage
+export default withRouter(LangdingPage)

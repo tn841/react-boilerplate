@@ -174,3 +174,8 @@ npm install antd --save
 ## #29. 30. 로그인 페이지 구현 
 - redux를 사용한 로그인 페이지 구현
 - 상당히 난해하다.
+
+- - -
+## #33. 인증 체크
+- HOC : 다른 component를 받아 새로운 component를 리턴하는 함수
+- 서버로 부터 User status를 얻고 상태를 확인한 다음 페이지 진입 여부 판단

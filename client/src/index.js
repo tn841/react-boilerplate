@@ -15,8 +15,8 @@ const createStoreWithMiddelware = applyMiddleware(promiseMiddelware, ReduxThunk)
 ReactDOM.render(
   <Provider
     store={createStoreWithMiddelware(Reducer, 
-        window.__REDUX_DEVTOOLS_EXTENSTION__ &&
-        window.__REDUX_DEVTOOLS_EXTENSTION__()  //chrome 확장프로그램 연동
+        window.__REDUX_DEVTOOLS_EXTENSION__ && 
+        window.__REDUX_DEVTOOLS_EXTENSION__() //chrome 확장프로그램 연동
       )}
   >
   <React.StrictMode>
